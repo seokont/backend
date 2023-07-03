@@ -16,6 +16,10 @@ app.use((req, res, next) => {
   next();
 });
 // Маршруты
+
+app.get("/test", (req, res, next) => {
+  return res.json({result:'ok'})
+});
 app.get("/", getItems);
 app.post("/", functionGet);
 app.put("/", saveNewAppo);
