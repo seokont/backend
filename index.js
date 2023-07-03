@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 
 // Создание экземпляра Express.js
 const app = express();
+const PORT = process.env.PORT || 80
 // Используйте body-parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -26,6 +27,6 @@ app.put("/", saveNewAppo);
 app.delete("/", functionDelete);
 
 // Запуск сервера
-app.listen(80, () => {
+app.listen(PORT, () => {
   console.log("Server is running on port 80");
 });
